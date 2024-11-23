@@ -1,21 +1,27 @@
 # Okapi
 
 Okapi is a tool to speed up and simplify your API development.<br>
-The workflow usually is as follows:<br>
-1. Create API documentation
-2. Export documentation
-3. Export code
-4. Adjust code
-5. Run code
+
+## Features
+- Create API documentations
+- Test APIs
+- Generate server/client code
+- Export API documentation
+
+## Run
+<pre>
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -R requirements.txt
+$ python okapi/main.py
+</pre>
 
 ## Export
-After creating the API documentation you can use okapi to generate
-server and client code for several languages.
 
 * **Documentation**
 	- HTML
 	- Textfile
-	- Markdown
+	- Markdown<br>
 
 * **Server Code**
 	- Flask
@@ -27,4 +33,15 @@ server and client code for several languages.
 	- Esp32
 	- curl
 
+## Files
+<pre>
+~/.okapi                    # Configs directory
+  |__ apidoc/               # Holds apidocs
+  |__ uris.txt              # List with stored urls
+  |__ user_agents.txt       # List with default HTTP useragents
+</pre>
 
+## Screenshots
+<img src="https://raw.githubusercontent.com/lukwies/okapi/refs/heads/main/screenshots/models.png" width=700 float="left">
+<img src="https://raw.githubusercontent.com/lukwies/okapi/refs/heads/main/screenshots/endpoints.png" width=700 float="left">
+<img src="https://raw.githubusercontent.com/lukwies/okapi/refs/heads/main/screenshots/request.png" width=700 float="left">
