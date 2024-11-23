@@ -12,7 +12,7 @@ Okapi is a tool to speed up and simplify your API development.<br>
 <pre>
 $ python -m venv venv
 $ source venv/bin/activate
-$ pip install -R requirements.txt
+$ pip install -r requirements.txt
 $ python okapi/main.py
 </pre>
 
