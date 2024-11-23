@@ -8,26 +8,12 @@ from os import path
 import tkinter as tk
 from tkinter import ttk
 
-from okapi.RequestFrame import RequestFrame
-from okapi.ApiDoc import ApiDoc
-from okapi.DOC import DOC as doc
-from okapi.widgets import Tablist
-from okapi.codegen import codegen
+from RequestFrame import RequestFrame
+from ApiDoc import ApiDoc
+from DOC import DOC as doc
+from widgets import Tablist
+from codegen import codegen
 
-"""
-|-------------------------------|
-| Menu				|
-|-------------------------------|
-| ApiDoc or			| 0
-| RequestFrame			|
-|				|
-|				|
-|-------------------------------|
-| Message label / Progressbar	| 1
-|-------------------------------|
-| Footer			| 2
-|-------------------------------|
-"""
 OKAPI_VERSION = "0.1"
 OKAPI_RELEASE = "okapi v" + OKAPI_VERSION + " (2024)"
 

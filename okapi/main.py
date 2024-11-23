@@ -17,7 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 from getopt import getopt, GetoptError
-from okapi.OkAPI import OkAPI
+from OkAPI import OkAPI
 import sys
 
 HELP="""
