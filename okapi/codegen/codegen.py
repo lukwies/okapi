@@ -3,7 +3,7 @@ from enum import Enum
 
 from . Esp32Server import Esp32ServerCode
 from . Esp32Client import Esp32ClientCode
-from . Textfile import Textfile
+from . TextDoc import TextDoc
 
 class CodeGenType(str,Enum):
 	NOTHING      = ""
@@ -75,6 +75,6 @@ def gen_code(doc, opts:CodeGenOptions):
 	elif opts.type == CodeGenType.ESP32_CLIENT:
 		return Esp32ClientCode(doc, opts).generate()
 	elif opts.type == CodeGenType.TEXT:
-		return Textfile(doc, opts).generate()
+		return TextDoc(doc, opts).generate()
 
 	return False
