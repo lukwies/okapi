@@ -1,7 +1,7 @@
 import os
 from . CodeGenBase import CodeGenBase
 
-class Textfile(CodeGenBase):
+class TextDoc(CodeGenBase):
 	def __init__(self, doc_, opts_):
 		super().__init__(doc_, opts_)
 
