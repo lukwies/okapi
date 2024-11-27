@@ -111,7 +111,7 @@ class EndpointRequestFrame(tk.Frame):
 			" send "   : self._send_request}
 		bf = ButtonFrame(self, btns, style='label', bg=_BG_BOT, border_fg='#bababa',
                                 btn_fg='#eee', btn_fg_hover='#ddd', btn_font="Arial 10",
-				align='right',
+#				align='right',
 				#btn_font_hover="Arial 8",
                                 btn_bg="#606060", btn_bg_hover="#808080",
                                 btn_border_fg='#aaa', btn_border_hover_fg='#a0a0a0',
