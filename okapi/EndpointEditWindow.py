@@ -503,8 +503,10 @@ class ParameterEditFrame(tk.Frame):
 		self.cRequired.configure(state=tk.NORMAL)
 		self._show_hide_content_type(False)
 		self._show_hide_values()
+
 		if not self.edit_mode:
 			self.eKey.configure(state=tk.NORMAL)
+			self.vKey.set("")
 
 		src = self.vSource.get()
 		if src == 'path':
@@ -533,6 +535,8 @@ class ParameterEditFrame(tk.Frame):
 		elif src == 'body':
 			# body allowes all datatypes
 			self.vDType.set("")
+			self.vKey.set("body")
+			self.eKey.configure(state=tk.DISABLED)
 			self.cbDType.configure(values=self.dtypeValues)
 			self.vRequired.set(0)
 			self._show_hide_values(False)
