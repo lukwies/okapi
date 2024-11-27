@@ -1,6 +1,7 @@
 # Okapi
 
 Okapi is a tool to speed up and simplify your API development.<br>
+It can be used for documentation, interaction with APIs and code generation.<br>
 
 ## Features
 - Create API documentations
@@ -21,17 +22,12 @@ $ python okapi/main.py
 * **Documentation**
 	- HTML
 	- Textfile
-	- Markdown<br>
 
 * **Server Code**
-	- Flask
 	- Esp32
-	- Esp8266
 
 * **Client Code**
-	- Python
 	- Esp32
-	- curl
 
 ## Files
 <pre>
