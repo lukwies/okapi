@@ -415,6 +415,16 @@ class ParamInfoFrame(tk.Frame):
 					padx=1, columnspan=2, pady=(5,0))
 			height = mef.get_height()
 
+		# Predefined values
+		elif 'values' in p and p['values']:
+			ltf = LabeledTextFrame(self, 'Values',
+					txt_height=len(p['values']))
+			ltf.grid(row=1, column=0, sticky='nswe', padx=1,
+				columnspan=2, pady=5)
+			ltf.text.set_text("\n".join(p['values']))
+
+
+
 
 class ResponseFrame(tk.Frame):
 	"""
