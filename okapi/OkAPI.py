@@ -160,7 +160,8 @@ class OkAPI:
 		menu.add_cascade(label='Export', menu=mExp)
 		# Export doc (submenu)
 		mExportDoc = tk.Menu(menu, tearoff=False)
-		mExportDoc.add_command(label='Html')
+		mExportDoc.add_command(label='Html',
+			command=lambda:self.fApiDoc.on_export(codegen.CodeGenType.HTML))
 		mExportDoc.add_command(label='Textfile',
 			command=lambda:self.fApiDoc.on_export(codegen.CodeGenType.TEXT))
 		mExportDoc.add_command(label='Markdown')
