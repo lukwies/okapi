@@ -4,6 +4,7 @@ from enum import Enum
 from . Esp32Server import Esp32ServerCode
 from . Esp32Client import Esp32ClientCode
 from . TextDoc import TextDoc
+from . HtmlDoc import HtmlDoc
 
 class CodeGenType(str,Enum):
 	NOTHING      = ""
@@ -64,6 +65,8 @@ def get_filename(doc, gentype:CodeGenType):
 		return name + '_client'
 	elif gentype == CodeGenType.TEXT:
 		return name + '.txt'
+	elif gentype == CodeGenType.HTML:
+		return name + '.html'
 	return name
 
 def gen_code(doc, opts:CodeGenOptions):
@@ -76,5 +79,7 @@ def gen_code(doc, opts:CodeGenOptions):
 		return Esp32ClientCode(doc, opts).generate()
 	elif opts.type == CodeGenType.TEXT:
 		return TextDoc(doc, opts).generate()
+	elif opts.type == CodeGenType.HTML:
+		return HtmlDoc(doc, opts).generate()
 
 	return False
