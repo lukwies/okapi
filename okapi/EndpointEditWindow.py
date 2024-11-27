@@ -450,6 +450,7 @@ class ParameterEditFrame(tk.Frame):
 			.grid(row=9, column=0, sticky='nswe',
 				columnspan=3)
 
+		self._on_select_source()
 		if self.edit_mode:
 			# Key can't be changed on existing parameter
 			self.eKey.configure(state=tk.DISABLED)
@@ -458,7 +459,6 @@ class ParameterEditFrame(tk.Frame):
 			self.cbDType.configure(state=tk.DISABLED)
 		else:
 			self.eKey.focus_set()
-			self._on_select_source()
 
 
 	def _save_parameter(self):
@@ -502,7 +502,7 @@ class ParameterEditFrame(tk.Frame):
 		# Called if combobox 'Source' selected
 		self.cRequired.configure(state=tk.NORMAL)
 		self._show_hide_content_type(False)
-		self._show_hide_values(False)
+		self._show_hide_values()
 		if not self.edit_mode:
 			self.eKey.configure(state=tk.NORMAL)
 
@@ -535,6 +535,8 @@ class ParameterEditFrame(tk.Frame):
 			self.vDType.set("")
 			self.cbDType.configure(values=self.dtypeValues)
 			self.vRequired.set(0)
+			self._show_hide_values(False)
+			self._show_hide_content_type(True)
 
 		elif src in ('query', 'header'):
 			# Allowed Types: string,int,decimal,bool
