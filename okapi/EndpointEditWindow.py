@@ -359,7 +359,6 @@ class ParameterEditFrame(tk.Frame):
 		self.sourceValues = []
 
 		if self.path_items:
-			print("PATHITEMS:", self.path_items)
 			self.sourceValues.append('path')
 		if self.method == 'GET':
 			self.sourceValues += ['query', 'header']
@@ -369,6 +368,7 @@ class ParameterEditFrame(tk.Frame):
 			self.dtypeValues += list(doc.DOC['models'].keys())
 		if key:
 			self.vKey.set(key)
+
 		self.vSource.set(self.sourceValues[0])
 		self._setup_gui()
 
@@ -399,7 +399,6 @@ class ParameterEditFrame(tk.Frame):
 		self.cbDType.bind("<<ComboboxSelected>>", self._on_select_dtype)
 		if self.edit_mode:
 			self.vDType.set(self.param_dict['type'])
-			self.cbDType.configure(state=tk.DISABLED)
 
 		# Datatype is list/array?
 		self.vIsArray = tk.IntVar(self)
@@ -457,8 +456,7 @@ class ParameterEditFrame(tk.Frame):
 			self.cIsArray.configure(state=tk.DISABLED)
 			self.cbSource.configure(state=tk.DISABLED)
 			self.cbDType.configure(state=tk.DISABLED)
-		else:
-			self.eKey.focus_set()
+		else:	self.eKey.focus_set()
 
 
 	def _save_parameter(self):
@@ -544,7 +542,7 @@ class ParameterEditFrame(tk.Frame):
 
 		elif src in ('query', 'header'):
 			# Allowed Types: string,int,decimal,bool
-			self.vDType.set("")
+			if not self.edit_mode: self.vDType.set("")
 			self.cbDType.configure(values=self.dtypeValues[:4])
 			self.vRequired.set(0)
 
