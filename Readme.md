@@ -22,12 +22,16 @@ $ python okapi/main.py
 * **Documentation**
 	- HTML
 	- Textfile
+	- Markdown (**TODO**)
 
 * **Server Code**
 	- Esp32
+	- Flask (**TODO**)
 
 * **Client Code**
 	- Esp32
+	- curl script (**TODO**)
+	- Python client (**TODO**)
 
 ## Files
 <pre>
