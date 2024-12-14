@@ -120,7 +120,6 @@ class ApiDoc(tk.Frame):
 				"Do you want to save before continue?"):
 				self.on_save_doc()
 		ow = OpenApiDocWindow(self)
-		ow.attributes('-topmost', 'true')
 
 	def on_save_doc(self):
 		"""
